@@ -1,0 +1,14 @@
+body common control
+{
+      bundlesequence =>
+      {
+        "git_update",
+        "host_info_report",
+      };
+
+      inputs =>
+      {
+        "git_update.cf",
+        "host_info_report.cf",
+      };
+}
