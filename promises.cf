@@ -4,6 +4,8 @@ body common control
       {
         "git_update",
         "host_info_report",
+        "general_applications",
+        "pkg_essentials",
       };
 
       inputs =>
@@ -12,9 +14,11 @@ body common control
 
         "git_update.cf",
         "host_info_report.cf",
+        "common_pkgs.cf",
       };
 }
 
+# The following is CFEngine 3 standard library code, developed by CFEngine AS.
 bundle common cfengine_stdlib
 {
   vars:

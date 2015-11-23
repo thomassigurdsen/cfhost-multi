@@ -3,6 +3,7 @@ bundle agent git_update
   commands:
     policy_server::
       "/usr/bin/git"
+      depends_on => { "pkg_essentials" },
       args => "pull --ff-only origin master",
       contain => masterfiles_contain;
 }

@@ -1,0 +1,16 @@
+bundle agent pkg_essentials
+{
+  vars:
+    debian::
+      "essential-pkgs" slist => { "silversearcher-ag",
+                                  "git",
+                                  "tree",
+                                  "augeas-tools"
+      };
+
+  packages:
+    debian::
+      "@(essential-pkgs)"
+      package_method => "apt_get",
+      package_policy => "add";
+}
