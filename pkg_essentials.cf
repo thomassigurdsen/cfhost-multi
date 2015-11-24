@@ -1,0 +1,45 @@
+bundle agent pkg_essentials
+{
+  vars:
+    debian::
+      "essential-pkgs" slist => { "silversearcher-ag",
+                                  "git",
+                                  "tree",
+                                  "augeas-tools"
+      };
+
+  packages:
+    debian::
+      "@(essential-pkgs)"
+      package_method => "apt_get",
+      package_policy => "add";
+};
+
+bundle agent pkgs_web
+{
+  vars:
+    debian::
+      "web-pkgs" slist => { "apache2",
+      };
+
+  packages:
+    debian::
+      "@(web-pkgs)"
+      package_method => "apt_get",
+      package_policy => "add";
+}
+
+bundle agent pkgs_fbx
+{
+  vars:
+    debian::
+      "fbx-pkgs" slist => { "freedombox-setup",
+      };
+
+  packages:
+    debian::
+      "@(fbx-pkgs)"
+      package_method => "apt_get",
+      package_policy => "add";
+
+}

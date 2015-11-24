@@ -13,7 +13,7 @@ bundle agent host_info_report
     "host_info_report_output"
       handle  => "host_info_report_vars_host_info_report_output",
 #      string  => "$(sys.workdir)/reports/$(this.bundle).txt",
-      string  => "/vagrant/$(sys.host).info",
+      string  => "/vagrant/output/$(sys.host).info",
       comment => "Where the host info report should be generated";
 
   methods:
